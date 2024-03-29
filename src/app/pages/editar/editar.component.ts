@@ -8,6 +8,7 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   templateUrl: './editar.component.html',
   styleUrls: ['./editar.component.scss']
 })
+
 export class EditarComponent implements OnInit{
 
   btnAcao = "Editar";
@@ -26,9 +27,9 @@ export class EditarComponent implements OnInit{
     });
   }
 
-  async editFuncionario(funcionario : Funcionario){
+  editarFuncionario(funcionario : Funcionario) {
     this.funcionarioService.AtualizarFuncionario(funcionario).subscribe(data => {
-      this.router.navigate(['']);
+      this.router.navigate(['/']);
     });
   }
 
