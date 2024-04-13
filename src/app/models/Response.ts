@@ -1,5 +1,5 @@
 export interface Response<T> {
-  status: boolean,
+  sucesso: boolean,
   mensagem: string,
   dados: T
 }

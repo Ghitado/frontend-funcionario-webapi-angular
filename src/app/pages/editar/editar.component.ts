@@ -22,6 +22,7 @@ export class EditarComponent implements OnInit{
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.funcionarioService.GetFuncionario(id).subscribe((data) => {
       this.funcionario = data.dados;
     });
@@ -29,7 +30,9 @@ export class EditarComponent implements OnInit{
 
   editarFuncionario(funcionario : Funcionario) {
     this.funcionarioService.AtualizarFuncionario(funcionario).subscribe(data => {
-      this.router.navigate(['/']);
+      console.log(data)
+
+      //this.router.navigate(['/']);
     });
   }
 

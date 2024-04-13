@@ -12,7 +12,7 @@ export class FuncionarioFormComponent implements OnInit{
   @Output() onSubmit = new EventEmitter<Funcionario>();
   @Input() btnAcao!: string;
   @Input() btnTitulo!: string;
-  @Input()  dadosFuncionario: Funcionario | null = null;
+  @Input() dadosFuncionario: Funcionario | null = null;
 
   funcionarioForm!: FormGroup;
 
@@ -25,8 +25,8 @@ export class FuncionarioFormComponent implements OnInit{
       sobrenome: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.sobrenome : '',[Validators.required]),
       departamento: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.departamento : '',[Validators.required]),
       turno: new FormControl(this.dadosFuncionario ? this.dadosFuncionario.turno : '',[Validators.required]),
-      ativo:  new FormControl(this.dadosFuncionario ? this.dadosFuncionario?.ativo : true),
-      dataDeCriacao: new FormControl(new Date()),
+      ativo: new FormControl(this.dadosFuncionario ? this.dadosFuncionario?.ativo : true),
+      dataDeCriacao: new FormControl(this.dadosFuncionario ? this.dadosFuncionario?.dataDeCriacao: new Date()),
       dataDeAlteracao: new FormControl(new Date())
     });
   }
